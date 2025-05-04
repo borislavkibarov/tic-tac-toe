@@ -47,8 +47,8 @@ npm install -g typescript
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/tic-tac-toe-ts.git
-cd tic-tac-toe-ts
+git clone https://github.com/borislavkibarov/tic-tac-toe
+cd tic-tac-toe
 ```
 
 ### 2. Install dependencies
