@@ -11,9 +11,26 @@ export class GameController {
     }
 
     init(): void {
+        this.initializeGameMode();
         this.initializeCellClickHandler();
         this.initializeResetButtonHandler();
+        this.initializeNewGameButtonHandler();
         this.displayScore();
+    }
+
+    initializeGameMode(): void {
+        document.querySelectorAll(`.${BUTTON.MODE}`).forEach((btn) => {
+            btn.addEventListener(EVENT.CLICK, (event) => {
+                const gameContainer = document.querySelector(`.${CLASS.GAME}`) as HTMLElement;
+                gameContainer.style.display = STYLE.DISPLAY_BLOCK;
+
+                const modeSelector = document.querySelector(`.${CLASS.MODE}`) as HTMLElement;
+                
+                if (modeSelector) {
+                    modeSelector.style.display = STYLE.DISPLAY_NONE;
+                }
+            });
+        });
     }
 
     initializeCellClickHandler(): void {
@@ -26,6 +43,10 @@ export class GameController {
 
     initializeResetButtonHandler(): void {
         document.querySelector(`.${BUTTON.RESET}`)?.addEventListener(EVENT.CLICK, () => this.handleResetButton());
+    }
+
+    initializeNewGameButtonHandler(): void {
+        document.querySelector(`.${BUTTON.NEW_GAME}`)?.addEventListener(EVENT.CLICK, () => this.handleNewGameButton());
     }
 
     private handleCellClick(cell: Element): void {
@@ -42,6 +63,19 @@ export class GameController {
         this.clearCells();
         this.displayScore();
         this.displayPlayerAtTurn();
+    }
+
+    private handleNewGameButton(): void {
+        this.handleResetButton();
+        
+        const gameContainer = document.querySelector(`.${CLASS.GAME}`) as HTMLElement;
+        gameContainer.style.display = STYLE.DISPLAY_NONE;
+
+        const modeSelector = document.querySelector(`.${CLASS.MODE}`) as HTMLElement;
+        
+        if (modeSelector) {
+            modeSelector.style.display = STYLE.DISPLAY_BLOCK;
+        }
     }
 
     private clearCells(): void {

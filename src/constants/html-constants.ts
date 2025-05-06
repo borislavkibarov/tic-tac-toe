@@ -12,11 +12,15 @@ export const CLASS = {
     BACKDROP: 'backdrop',
     ALERT_MESSAGE: 'alert-message',
     SCORE_MESSAGE: 'score-message',
-    DOT: "active-player-dot"
+    DOT: "active-player-dot",
+    MODE: 'mode',
+    GAME: 'game',
 }
 
 export const BUTTON = {
-    RESET: 'reset'
+    RESET: 'reset',
+    NEW_GAME: 'new-game',
+    MODE: 'mode-btn',
 }
 
 export const STYLE = {

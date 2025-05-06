@@ -17,39 +17,53 @@
 <body>
     <h1>Tic tac toe</h1>
 
-    <section class="score">
+    <section class="mode">
+        <span>Select Game Mode:</span>
+        <div class="mode-buttons">
+            <button class="mode-btn" data-mode="PvP">Player vs Player</button>
+            <button class="mode-btn" data-mode="PvE">Player vs AI</button>
+        </div>
+    </section>
+
+    <section class="game" style="display: none;">
+        <section class="score">
         <div class="score-container">
             <span class="active-player-dot x-turn"></span>
             <div class="score-message"></div>
         </div>
-    </section>
+        </section>
 
-    <section class="board">
+        <section class="board">
         <table>
             <tr>
-                <td class="square" data-bits="1"></td>
-                <td class="square" data-bits="2"></td>
-                <td class="square" data-bits="4"></td>
+            <td class="square" data-bits="1"></td>
+            <td class="square" data-bits="2"></td>
+            <td class="square" data-bits="4"></td>
             </tr>
             <tr>
-                <td class="square" data-bits="8"></td>
-                <td class="square" data-bits="16"></td>
-                <td class="square" data-bits="32"></td>
+            <td class="square" data-bits="8"></td>
+            <td class="square" data-bits="16"></td>
+            <td class="square" data-bits="32"></td>
             </tr>
             <tr>
-                <td class="square" data-bits="64"></td>
-                <td class="square" data-bits="128"></td>
-                <td class="square" data-bits="256"></td>
+            <td class="square" data-bits="64"></td>
+            <td class="square" data-bits="128"></td>
+            <td class="square" data-bits="256"></td>
             </tr>
         </table>
-    </section>
+        </section>
 
-    <section class="button">
-        <button class="reset">Reset game</button>
-    </section>
+        <section class="button">
+            <button class="reset">Reset game</button>
+            <div class="button-separator"></div>
+            <button class="new-game">Start new game</button>
+        </section>
+        
 
-    <div class="alert"></div>
-    <div class="backdrop"></div>
+        <div class="alert"></div>
+        <div class="backdrop"></div>
+    </section>
+    
     <script src="./src/index.ts" type="module"></script>
 </body>
 </html>
