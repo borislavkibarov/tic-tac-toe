@@ -8,8 +8,8 @@ A clean, modular, and animated implementation of the classic Tic-Tac-Toe game us
 
 ## 🚀 Features
 
-- PvP local gameplay (X vs O)
-- PvE gameplaye
+- PvP gameplay
+- PvE gameplay
 - Visual player indicator with animated turn dot
 - Dynamic score tracking
 - Responsive and styled UI
