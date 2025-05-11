@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Assignment 2</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+  <script type="module" crossorigin src="https://github.com/borislavkibarov/tic-tac-toe/assets/index-DIYkk7_R.js"></script>
+  <link rel="stylesheet" crossorigin href="https://github.com/borislavkibarov/tic-tac-toe/assets/index-DqONTQB0.css">
+</head>
+
+<body>
+    <h1>Tic tac toe</h1>
+
+    <section class="mode">
+        <span>Select Game Mode:</span>
+        <div class="mode-buttons">
+            <button class="mode-btn" data-mode="PvP">Player vs Player</button>
+            <button class="mode-btn" data-mode="PvE">Player vs AI</button>
+        </div>
+    </section>
+
+    <section class="game" style="display: none;">
+        <section class="score">
+        <div class="score-container">
+            <span class="active-player-dot x-turn"></span>
+            <div class="score-message"></div>
+        </div>
+        </section>
+
+        <section class="board">
+        <table>
+            <tr>
+            <td class="square" data-bits="1"></td>
+            <td class="square" data-bits="2"></td>
+            <td class="square" data-bits="4"></td>
+            </tr>
+            <tr>
+            <td class="square" data-bits="8"></td>
+            <td class="square" data-bits="16"></td>
+            <td class="square" data-bits="32"></td>
+            </tr>
+            <tr>
+            <td class="square" data-bits="64"></td>
+            <td class="square" data-bits="128"></td>
+            <td class="square" data-bits="256"></td>
+            </tr>
+        </table>
+        </section>
+
+        <section class="button">
+            <button class="reset">Reset game</button>
+            <div class="button-separator"></div>
+            <button class="new-game">Start new game</button>
+        </section>
+        
+
+        <div class="alert"></div>
+        <div class="backdrop"></div>
+    </section>
+    
+</body>
+</html>
