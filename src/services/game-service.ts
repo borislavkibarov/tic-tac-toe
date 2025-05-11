@@ -1,6 +1,8 @@
 import { Player, Board, Result } from "@models/models.js";
 import { playerSymbols, EMPTY_STRING , RESULT_MESSAGE_DRAW, RESULT_MESSAGE_WIN, playerMoves } from "@constants/constants.js";
 import { Bit, PlayerSymbol } from "@aliases/types.js";
+import { GameMode } from "@constants/game-constants.js";
+import { AIService } from "@services/ai-service.js";
 
 export class GameService {
 
@@ -9,28 +11,33 @@ export class GameService {
     private startingPlayer: Player;
     private currentPlayer: Player;
     private board: Board;
+    private gameMode: GameMode;
+    private ai: AIService;
 
-    constructor() {
+    constructor(ai: AIService) {
         this.playerX = new Player(playerSymbols.X, playerMoves.FIRST);
         this.playerO = new Player(playerSymbols.O, playerMoves.SECOND);
         this.startingPlayer = this.playerX;
         this.currentPlayer = this.startingPlayer;
         this.board = new Board();
+        this.gameMode = GameMode.PvP;
+        this.ai = ai;
     }
 
-    applyPlayersMove(bits: Bit): PlayerSymbol {
-        const currentPlayerSymbol = this.currentPlayer.getSymbol();
-
+    makeMove(bits: Bit): PlayerSymbol {
         if (this.isCellOccupied(bits)) {
-            
-            return currentPlayerSymbol;
+            return this.currentPlayer.getSymbol();
         }
-        
+
         this.board.addBits(bits);
         this.currentPlayer.addBits(bits);
         this.currentPlayer.decrementAvailableMoves();
         
-        return currentPlayerSymbol;
+        return this.currentPlayer.getSymbol();
+    }
+
+    makeAIMove(): Bit {
+        return this.ai.getBestMove(this.playerX.getBits(), this.playerO.getBits());
     }
 
     hasGameFinished(): Result {
@@ -42,19 +49,34 @@ export class GameService {
         }
 
         if (this.isGameDrawn()) {
-            
             return new Result(RESULT_MESSAGE_DRAW, true);
         }
 
         return new Result(EMPTY_STRING, false);
     }
 
-    getCurrentResult(): string {
-        return `${this.playerX.getWins()}:${this.playerO.getWins()}`;
+    setGameMode(mode: GameMode): void {
+        this.gameMode = mode;
+    }
+
+    isAgainstAI(): boolean {
+        return this.gameMode === GameMode.PvE;
     }
 
     getCurrentPlayerSymbol(): PlayerSymbol {
         return this.currentPlayer.getSymbol();
+    }
+
+    switchCurrentPlayer(): void {
+        this.currentPlayer = this.currentPlayer === this.playerX ? this.playerO : this.playerX;
+    }
+
+    isCellOccupied(bits: Bit): boolean {
+        return (this.board.getBits() & bits) !== 0;
+    }
+
+    getCurrentResult(): string {
+        return `${this.playerX.getWins()}:${this.playerO.getWins()}`;
     }
 
     startNewGame(): void {
@@ -77,35 +99,24 @@ export class GameService {
         this.currentPlayer = this.startingPlayer;
     }
 
-    switchCurrentPlayer(): void {
-        this.currentPlayer = this.currentPlayer === this.playerX ? this.playerO : this.playerX;
-    }
-
     private switchStartingPlayer(): void {
         this.startingPlayer = this.startingPlayer === this.playerX ? this.playerO : this.playerX;
         this.startingPlayer === this.playerO ? this.playerO.setAvailableMoves(playerMoves.FIRST) : this.playerO.setAvailableMoves(playerMoves.SECOND);
         this.startingPlayer === this.playerX ? this.playerX.setAvailableMoves(playerMoves.FIRST) : this.playerX.setAvailableMoves(playerMoves.SECOND);
     }
 
-    private isCellOccupied(bits: Bit): boolean {
-        const occupiedBits = this.board.getBits();
-
-        return (occupiedBits & bits) !== 0;
-    }
-
     private isGameWon(): boolean {
-        const currentPlayerSum = this.currentPlayer.getBits();
+        const currentPlayerBits = this.currentPlayer.getBits();
 
-        return this.board.areWinningBits(currentPlayerSum);
+        return this.board.areWinningBits(currentPlayerBits);
     }
 
     private isGameDrawn(): boolean {
         const playerXBits = this.playerX.getBits();
         const playerXAvailableMoves = this.playerX.getAvailableMoves();
-        
         const playerOBits = this.playerO.getBits();
         const playerOAvailableMoves = this.playerO.getAvailableMoves();
-
+        
         return this.board.areDrawnBits(playerXBits, playerXAvailableMoves, playerOBits, playerOAvailableMoves);
     }
 }
