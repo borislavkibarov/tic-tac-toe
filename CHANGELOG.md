@@ -20,9 +20,15 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ---
 
-## [Upcoming]
-- Unbeatable AI with Minimax logic
+## [1.1.0] — 11.05.2025
+
+### ✨ Added
 - Game mode selector (PvP / PvE)
-- Undo move functionality
-- Theme toggle (light/dark)
+- Unbeatable AI with Minimax logic
+- Deploy configration to GitHub Pages
+
+---
+
+## [Upcoming]
+- Multiplayer
 - Unit tests with Vitest + Testing Library

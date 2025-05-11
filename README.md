@@ -1,6 +1,6 @@
 # 🕹️ Tic-Tac-Toe Game
 
-![version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![version](https://img.shields.io/badge/version-1.1.0-blue.svg)
 
 A clean, modular, and animated implementation of the classic Tic-Tac-Toe game using **TypeScript**, **HTML**, and **CSS** — with a sharp architecture and strong code organization inspired by real-world production apps.
 
@@ -8,7 +8,8 @@ A clean, modular, and animated implementation of the classic Tic-Tac-Toe game us
 
 ## 🚀 Features
 
-- 2-player local gameplay (X vs O)
+- PvP local gameplay (X vs O)
+- PvE gameplaye
 - Visual player indicator with animated turn dot
 - Dynamic score tracking
 - Responsive and styled UI
@@ -71,3 +72,6 @@ You can find the full changelog in
 
 [![Changelog](https://img.shields.io/badge/changelog-md-blue)](./CHANGELOG.md)
 
+## 🔗 Live Demo
+
+[![Deploy](https://img.shields.io/badge/demo-live-brightgreen?style=flat&logo=github)](https://borislavkibarov.github.io/tic-tac-toe/)
