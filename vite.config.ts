@@ -16,5 +16,5 @@ export default defineConfig({
     outDir: './dist',
     emptyOutDir: true,
   },
-  base: 'https://github.com/borislavkibarov/tic-tac-toe'
+  base: '/tic-tac-toe/',
 });
