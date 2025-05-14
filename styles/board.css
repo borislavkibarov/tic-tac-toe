@@ -1,0 +1,57 @@
+.board {
+  width: 90vw;
+  max-width: 400px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+}
+
+.board table {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.board table .square {
+  width: 33.33%;
+  height: 33.33%;
+  border-bottom: 2px solid var(--border-color);
+  border-right: 2px solid var(--border-color);
+  cursor: pointer;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.board table .player-x-color {
+  color: var(--text-color);
+}
+
+.board table .player-o-color {
+  color: var(--player-o-color);
+}
+
+.board table tr:last-child .square {
+  border-bottom: none;
+}
+
+.board table tr .square:last-child {
+  border-right: none;
+}
+
+.active-player-dot {
+  position: absolute;
+  top: 10%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  animation: pulse 1s infinite ease-in-out;
+}
+
+.active-player-dot.x-turn {
+  left: -5px;
+}
+
+.active-player-dot.o-turn {
+  right: -5px;
+}

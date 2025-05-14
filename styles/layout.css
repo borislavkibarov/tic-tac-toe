@@ -1,0 +1,40 @@
+body {
+  background-color: var(--background-color);
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-transform: uppercase;
+  max-width: 90vw;
+  margin: 0 auto;
+  padding: 5px 0;
+  color: var(--text-color);
+  text-align: center;
+  font-weight: 200;
+  border-bottom: 2px dotted var(--border-color);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.score {
+  max-width: 200px;
+  margin: 20px auto;
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--text-color);
+}
+
+.score-container {
+  position: relative;
+  width: 100%;
+  max-width: 150px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.score-message {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--text-color);
+}
