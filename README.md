@@ -1,6 +1,6 @@
 # 🕹️ Tic-Tac-Toe Game
 
-![version](https://img.shields.io/badge/version-1.1.0-blue.svg)
+![version](https://img.shields.io/badge/version-1.2.0-blue.svg)
 
 A clean, modular, and animated implementation of the classic Tic-Tac-Toe game using **TypeScript**, **HTML**, and **CSS** — with a sharp architecture and strong code organization inspired by real-world production apps.
 

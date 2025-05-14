@@ -29,6 +29,15 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ---
 
+## [1.2.0] — 14.05.2025
+
+### ✨ Added
+- Responsive design
+- AI thinking indicator
+- CSS files modular architecture
+
+---
+
 ## [Upcoming]
 - Multiplayer
 - Unit tests with Vitest + Testing Library
