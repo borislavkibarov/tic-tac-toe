@@ -73,4 +73,20 @@ export class UIController {
     (document.querySelector(`.${CLASS.GAME}`) as HTMLElement).style.display = STYLE.DISPLAY_NONE;
     (document.querySelector(`.${CLASS.MODE}`) as HTMLElement).style.display = STYLE.DISPLAY_BLOCK;
   }
+
+  showAIIndicator(): void {
+    const aiIndicator = document.querySelector(`.${CLASS.AI_INDICATOR}`) as HTMLElement;
+
+    if (aiIndicator) {
+      aiIndicator.style.display = STYLE.DISPLAY_FLEX;
+    }
+  }
+
+  hideAIIndicator(): void {
+    const aiIndicator = document.querySelector(`.${CLASS.AI_INDICATOR}`) as HTMLElement;
+
+    if (aiIndicator) {
+      aiIndicator.style.display = STYLE.DISPLAY_NONE;
+    }
+  }
 }

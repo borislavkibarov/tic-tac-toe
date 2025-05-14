@@ -15,6 +15,7 @@ export const CLASS = {
     DOT: "active-player-dot",
     MODE: 'mode',
     GAME: 'game',
+    AI_INDICATOR: 'ai-indicator',
 }
 
 export const BUTTON = {
@@ -26,6 +27,7 @@ export const BUTTON = {
 export const STYLE = {
     DISPLAY_BLOCK: 'block',
     DISPLAY_NONE: 'none',
+    DISPLAY_FLEX: 'flex',
 }
 
 export const ATTRIBUTE = {

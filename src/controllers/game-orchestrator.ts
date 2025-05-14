@@ -82,10 +82,12 @@ export class GameOrchestrator {
 
   private makeAIMove(timeout: number): void {
     this.lockInput();
+    this.ui.showAIIndicator();
 
     setTimeout(() => {
       const aiMove = this.game.makeAIMove();
       this.unlockInput();
+      this.ui.hideAIIndicator();
       this.onCellClick(aiMove);
     }, timeout);
   }
