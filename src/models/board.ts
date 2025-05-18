@@ -33,6 +33,10 @@ export class Board {
     }
 
     areDrawnBits(xBits: Bitmask, xAvailableMoves: Move, oBits: Bitmask, oAvailableMoves: Move): boolean {
+        if (this.bits == DRAW_BITS) {
+            return true;
+        }
+
         const xCanWin = this.canStillWin(xBits, xAvailableMoves);
         const oCanWin = this.canStillWin(oBits, oAvailableMoves);
 

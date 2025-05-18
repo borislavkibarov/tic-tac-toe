@@ -1,8 +1,5 @@
-import { GameService } from "@services/game-service.js";
-import { AIService } from "@services/ai-service.js";
-import { GameController } from "@controllers/game-controller.js";
-import { UIController } from "@controllers/ui-controller.js";
-import { InputController } from "@controllers/input-controller.js";
+import { GameService, AIService } from "@services/services.js";
+import { GameController, UIController, InputController } from "@controllers/controllers.js";
 
 const ai = new AIService();
 const ui = new UIController();
