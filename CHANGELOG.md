@@ -38,6 +38,13 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ---
 
+## [1.2.1] — 18.05.2025
+
+### ✨ Added
+- Vitest configuration
+- Unit tests
+
+---
+
 ## [Upcoming]
 - Multiplayer
-- Unit tests with Vitest + Testing Library
