@@ -1,7 +1,7 @@
 import { Player, Board, Result } from "@models/models.js";
 import { playerSymbols, EMPTY_STRING , RESULT_MESSAGE_DRAW, RESULT_MESSAGE_WIN, playerMoves, GameMode } from "@constants/constants.js";
 import { Bit, PlayerSymbol } from "@aliases/types.js";
-import { AIService } from "@services/services.js";
+import { AIService, BoardService } from "@services/services.js";
 
 export class GameService {
 
@@ -9,16 +9,16 @@ export class GameService {
     private playerO: Player;
     private startingPlayer: Player;
     private currentPlayer: Player;
-    private board: Board;
+    private board: BoardService;
     private gameMode: GameMode;
     private ai: AIService;
 
-    constructor(ai: AIService) {
+    constructor(ai: AIService, board: BoardService) {
         this.playerX = new Player(playerSymbols.X, playerMoves.FIRST);
         this.playerO = new Player(playerSymbols.O, playerMoves.SECOND);
         this.startingPlayer = this.playerX;
         this.currentPlayer = this.startingPlayer;
-        this.board = new Board();
+        this.board = board;
         this.gameMode = GameMode.PvP;
         this.ai = ai;
     }
