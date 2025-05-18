@@ -1,7 +1,5 @@
-import { playerSymbols, playerColours } from "@constants/player-constants.js";
-import { ATTRIBUTE, CLASS, STYLE, TAG, TURN } from "@constants/html-constants.js";
+import { playerSymbols, playerColours, ATTRIBUTE, CLASS, STYLE, TAG, TURN, EMPTY_STRING } from "@constants/constants.js";
 import { Bit, PlayerSymbol } from "@aliases/types.js";
-import { EMPTY_STRING } from "@constants/common-constants";
 
 export class UIController {
   

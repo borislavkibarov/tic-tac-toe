@@ -1,10 +1,9 @@
-import { GameService } from "@services/game-service.js";
-import { UIController } from "./ui-controller.js";
-import { GameMode } from "@constants/game-constants.js";
+import { GameService } from "@services/services.js";
+import { UIController } from "@controllers/controllers.js";
+import { GameMode, playerSymbols } from "@constants/constants.js";
 import { Bit } from "@aliases/types.js";
-import { playerSymbols } from "@constants/constants.js";
 
-export class GameOrchestrator {
+export class GameController {
 
   private inputLocked: boolean = false;
     

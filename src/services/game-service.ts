@@ -1,8 +1,7 @@
 import { Player, Board, Result } from "@models/models.js";
-import { playerSymbols, EMPTY_STRING , RESULT_MESSAGE_DRAW, RESULT_MESSAGE_WIN, playerMoves } from "@constants/constants.js";
+import { playerSymbols, EMPTY_STRING , RESULT_MESSAGE_DRAW, RESULT_MESSAGE_WIN, playerMoves, GameMode } from "@constants/constants.js";
 import { Bit, PlayerSymbol } from "@aliases/types.js";
-import { GameMode } from "@constants/game-constants.js";
-import { AIService } from "@services/ai-service.js";
+import { AIService } from "@services/services.js";
 
 export class GameService {
 

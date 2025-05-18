@@ -1,11 +1,9 @@
-import { GameMode } from "@constants/game-constants.js";
-import { ATTRIBUTE, BUTTON, CLASS, EVENT } from "@constants/html-constants.js";
-import { GameOrchestrator } from "./game-orchestrator.js";
-import { ZERO_AS_STRING } from "@constants/common-constants.js";
+import { GameMode, ATTRIBUTE, BUTTON, CLASS, EVENT, ZERO_AS_STRING } from "@constants/constants.js";
+import { GameController } from "@controllers/game-controller.js";
 
 export class InputController {
     
-  constructor(private orchestrator: GameOrchestrator) {}
+  constructor(private orchestrator: GameController) {}
 
   init(): void {
     this.initModeButtons();
